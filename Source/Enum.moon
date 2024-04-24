@@ -1,4 +1,48 @@
 class Enum
+	Technology: {
+		Legacy:								0,
+		Voxel:								1,
+		Compatibility:						2,
+		ShadowMap:							3,
+		Future:								4,
+	}
+	VolumetricAudio: {
+		Disabled:							0,
+		Automatic:							1,
+		Enabled:							2,
+	}
+	ListenerType: {
+		Camera:								0,
+		CFrame:								1,
+		ObjectPosition:						2,
+		ObjectCFrame:						3,
+	}
+	ReverbType: {
+		NoReverb:							0,
+		GenericReverb:						1,
+		PaddedCell:							2,
+		Room:								3,
+		Bathroom:							4,
+		LivingRoom:							5,
+		StoneRoom:							6,
+		Auditorium:							7,
+		ConcertHall:						8,
+		Cave:								9,
+		Arena:								10,
+		Hangar:								11,
+		CarpettedHallway:					12,
+		Hallway:							13,
+		StoneCorridor:						14,
+		Alley:								15,
+		Forest:								16,
+		City:								17,
+		Mountains:							18,
+		Quarry:								19,
+		Plain:								20,
+		ParkingLot:							21,
+		SewerPipe:							22,
+		UnderWater:							23,
+	}
 	FieldOfViewMode: {
 		Vertical:							0,
 		Diagonal:							1,
