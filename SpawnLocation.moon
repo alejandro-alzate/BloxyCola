@@ -1,0 +1,2 @@
+class SpawnLocation
+return { SpawnLocation }

@@ -1,0 +1,2 @@
+class CFrame
+return { CFrame }
