@@ -1,6 +1,7 @@
 import Vector2, Vector3 from require "Vector"
 import BrickColor from require "Color"
 import Enum from require "Enum"
+export Game
 
 class Game
 	isA: (what) ->
@@ -37,4 +38,3 @@ class Game
 -- 		super(@Name)
 -- 		@type: "Game"
 
-return { Game: Game }

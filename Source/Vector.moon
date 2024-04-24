@@ -1,3 +1,5 @@
+class Vector2
+	--TODO:
 class Vector3
 	--Initialization
 	new: (@X=0, @Y=0, @Z=0) =>
@@ -64,8 +66,8 @@ class Vector3
 		if type(otherVector) == "table"
 			if not otherVector.__class == "Vector3"
 				error "Projection can only be calculated with another Vector3"
-		otherUnit = otherVector:unit()
-		dotProduct = self:Dot(otherUnit)
+		otherUnit = otherVector\unit()
+		dotProduct = self\Dot(otherUnit)
 		return otherUnit * dotProduct
 
 	--Meta methods
@@ -100,7 +102,7 @@ class Vector3
 		elseif type(b) == "number"
 			return Vector3(a.X * b, a.Y * b, a.Z * b)
 		else
-			return self:Dot(a)
+			return self\Dot(a)
 	__div: (a, b) =>
 		if type(a) == "number"
 			return Vector3(@X / a, @Y / a, @Z / a)
@@ -143,8 +145,5 @@ class Vector3
 	--__gc: (a, b) =>
 	--__mode: (a, b) =>
 
---Shorcuts
---class Vec3 extends Vector3
---class vec3 extends Vector3
 
-return { Vector3, Vector2}
+Vector3, Vector2

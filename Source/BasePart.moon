@@ -1,3 +1,12 @@
+import Vector3 from require "Vector"
+import Enum from require "Enum"
+import BrickColor from require "Color"
+import CFrame from require "CFrame"
+import PhysicalProperties from require "PhysicalProperties"
+import Faces from require "Faces"
+import Color3 from require "Color"
+
+export BasePart
 class BasePart
 	new: (@Name, properties={}) ->
 		@Anchored = properties.Anchored or false
@@ -46,4 +55,3 @@ class BasePart
 		@Type = "BasePart"
 	GetRootPart: ->
 		@AssemblyRootPart
-return { BasePart }

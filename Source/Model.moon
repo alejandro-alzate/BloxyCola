@@ -2,6 +2,7 @@ import Enum from require "Enum"
 import CFrame from require "CFrame"
 import Instance from require "Instance"
 import PVInstance from require "PVInstance"
+export Model
 
 class Model extends PVInstance, Instance
 	new: ->
@@ -19,7 +20,3 @@ class Model extends PVInstance, Instance
     RemovePersistentPlayer: (playerInstance) =>
     ScaleTo: (newScaleFactor) =>
     TranslateBy: (delta) =>
-
-
-
-return { Model }

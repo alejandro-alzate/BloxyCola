@@ -1,4 +1,7 @@
 import Instance from require "Instance"
+import Vector3 from require "Vector"
+import Enum from require "Enum"
+import Part from require "Part"
 
 class Humanoid extends Instance
 	new: (properties) ->

@@ -2,6 +2,7 @@ import BasePart from require "BasePart"
 import Color3 from require "Color"
 import Region3int16 from require "Region"
 import PVInstance from require "PVInstance"
+export Terrain, TerrainRegion
 
 class TerrainRegion
 
@@ -37,5 +38,3 @@ class Terrain extends BasePart, PVInstance
 	WorldToCellPreferSolid: (position) ->
 	WriteVoxelChannels: (region, resolution, channels) ->
 	WriteVoxels: (region, resolution, materials,occupancy) ->
-
-return { Terrain }
