@@ -1,0 +1,1 @@
+moonc -l ./Source/*.moon
