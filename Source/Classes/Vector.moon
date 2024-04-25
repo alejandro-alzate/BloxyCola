@@ -1,5 +1,146 @@
 class Vector2
-	--TODO:
+	--Initialization
+	new: (@X=0, @Y=0) =>
+		@magnitude = math.sqrt(@X^2 + @Y^2)
+		self
+
+	--Access
+	Unpack: =>
+		@X, @Y
+
+	--Arithmetic
+	Clone: =>
+		newClone = {}
+		for k,v in pairs(self)
+			newClone[k] = v
+		newClone
+
+	Unit: =>
+		Vector2(@X / @magnitude, @Y / @magnitude)
+
+	Dot: (otherVector) =>
+		if type(otherVector) == "table"
+			if not otherVector.__class == "Vector2"
+				error "Dot product can only be calculated with another Vector2"
+		@X * otherVector.X + @Y * otherVector.Y
+
+	Cross: (otherVector) =>
+		--TODO:
+		-- if type(otherVector) == "table"
+		-- 	if not otherVector.__class == "Vector2"
+		-- 		error "Cross product can only be calculated with another Vector2"
+		-- newX = @Y * otherVector.Z - @Z * otherVector.Y
+		-- newY = @Z * otherVector.X - @X * otherVector.Z
+		-- newZ = @X * otherVector.Y - @Y * otherVector.X
+		-- Vector2(newX, newY, newZ)
+
+	LinearLerp: (goalVector, alpha=0) =>
+		if not goalVector.__class == "Vector2"
+			error "Linear interpolation can only be calculated with another Vector2"
+		newX = @X + (goalVector.X - @X) * alpha
+		newY = @Y + (goalVector.Y - @Y) * alpha
+		Vector2(newX, newY)
+
+	CubicLerp: (goalVector, alpha) =>
+		if not goalVector.__class == "Vector2"
+			error "Cubic interpolation can only be calculated with another Vector2"
+		alpha2 = alpha * alpha
+		--alpha3 = alpha2 * alpha
+		newX = @X + (goalVector.X - @X) * alpha2
+		newY = @Y + (goalVector.Y - @Y) * alpha2
+		Vector2(newX, newY)
+
+	Distance: (otherVector) =>
+		if type(otherVector) == "table"
+			if not otherVector.__class == "Vector2"
+				error "Distance can only be calculated with another Vector2"
+		dx = @X - otherVector.X
+		dy = @Y - otherVector.Y
+		math.sqrt(dx^2 + dy^2)
+
+	ProjectOn: (otherVector) =>
+		if type(otherVector) == "table"
+			if not otherVector.__class == "Vector2"
+				error "Projection can only be calculated with another Vector2"
+		otherUnit = otherVector\unit()
+		dotProduct = self\Dot(otherUnit)
+		return otherUnit * dotProduct
+
+	--Meta methods
+	--__index: (tbl, key) =>
+	__newindex: (tbl, key, val) =>
+		if type(val) == "number"
+			if key == "X"
+				@X = val
+			if key == "Y"
+				@Y = val
+			if key == "Z"
+				@Z = val
+			@magnitude = math.sqrt(@X^2 + @Y^2)
+
+	__tostring: =>
+		"Vector2: {X: #{@X} Y: #{@Y}}"
+
+	--__metatable: =>
+	-- --__call: =>
+	__add: (a, b) =>
+		if type(a) == "number"
+			return Vector3(@X + a, @Y + a)
+		elseif type(b) == "number"
+			return Vector3(a.X + b, a.Y + b)
+		else
+			return Vector3(@X + b.X, @Y + b.Y)
+
+	__sub: (a, b) =>
+	__mul: (a, b) =>
+		if type(a) == "number"
+			return Vector3(@X * a, @Y * a)
+		elseif type(b) == "number"
+			return Vector3(a.X * b, a.Y * b)
+		else
+			return self\Dot(a)
+	__div: (a, b) =>
+		if type(a) == "number"
+			return Vector3(@X / a, @Y / a)
+
+	__mod: (a, b) =>
+		if type(a) == "number"
+			return Vector2(@X % a, @Y % a)
+		else if type(b) == "number"
+			return Vector2(a.X % b, a.Y % b)
+		else
+			error "Modulus operation not supported between two Vector2 instances"
+
+	__pow: (a, b) =>
+		if type(a) == "number"
+			return Vector2(@X ^ a, @Y ^ a)
+		else
+			error "Exponentiation operation not supported for Vector2"
+
+	__unm: (a, b) =>
+		return Vector2(-@X, -@Y)
+
+	__concat: (a, b) =>
+		return tostring(a) .. tostring(b)
+
+	__eq: (a, b) =>
+		return @X == b.X and @Y == b.Y
+
+	__lt: (a, b) =>
+		return @magnitude < b.magnitude
+
+	__le: (a, b) =>
+		return @magnitude <= b.magnitude
+
+	__len: => 3
+	__ipairs: (a, b) =>
+		return ipairs {@X, @Y}
+
+	__pairs: (a, b) =>
+		return pairs {@X, @Y}
+	--__gc: (a, b) =>
+	--__mode: (a, b) =>
+
 class Vector3
 	--Initialization
 	new: (@X=0, @Y=0, @Z=0) =>
