@@ -6,8 +6,7 @@ local Instance
 Instance = require("Instance").Instance
 local PVInstance
 PVInstance = require("PVInstance").PVInstance
-local _ = (function()
-  local Model
+return (function()
   do
     local _class_0
     local _parent_0 = PVInstance
@@ -48,7 +47,7 @@ local _ = (function()
   end
 end)(), Instance({
   new = function()
-    _ = {
+    local _ = {
       [self.LevelOfDetail] = Enum.ModelLevelOfDetail.Automatic
     }
     _ = {
@@ -75,6 +74,3 @@ end)(), Instance({
   ScaleTo = function(self, newScaleFactor) end,
   TranslateBy = function(self, delta) end
 })
-return {
-  Model
-}

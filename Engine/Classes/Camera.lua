@@ -7,6 +7,8 @@ do
 end
 local CFrame
 CFrame = require("CFrame").CFrame
+local Enum
+Enum = require("Enum").Enum
 local Camera
 do
   local _class_0
@@ -19,9 +21,7 @@ do
     SetRoll = function(rollAngle) end,
     ViewportPointToRay = function(x, y, depth) end,
     WorldToScreenPoint = function(worldPoint) end,
-    WorldToViewportPoint = function(worldPoint)
-      return Tuple
-    end,
+    WorldToViewportPoint = function(worldPoint) end,
     ZoomToExtents = function(boundingBoxCFrame, boundingBoxSize) end,
     InterpolationFinished = function() end
   }
@@ -36,7 +36,7 @@ do
       self.FieldOfView = properties.FieldOfView or 70
       self.FieldOfViewMode = properties.FieldOfViewMode or Enum.FieldOfViewMode.Vertical
       self.Focus = properties.Focus or CFrame.new()
-      self.HeadLocked = type(properties.HeadLocked) == "boolean" and HeadLocked or true
+      self.HeadLocked = type(properties.HeadLocked) == "boolean" and properties.HeadLocked or true
       self.HeadScale = properties.HeadScale or 1
       self.MaxAxisFieldOfView = properties.MaxAxisFieldOfView or 70
       self.NearPlaneZ = properties.NearPlaneZ or 0.5

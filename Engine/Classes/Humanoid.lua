@@ -1,5 +1,11 @@
 local Instance
 Instance = require("Instance").Instance
+local Vector3
+Vector3 = require("Vector").Vector3
+local Enum
+Enum = require("Enum").Enum
+local Part
+Part = require("Part").Part
 local Humanoid
 do
   local _class_0

@@ -6,7 +6,6 @@ local Region3int16
 Region3int16 = require("Region").Region3int16
 local PVInstance
 PVInstance = require("PVInstance").PVInstance
-local TerrainRegion
 do
   local _class_0
   local _base_0 = { }
@@ -26,8 +25,7 @@ do
   _base_0.__class = _class_0
   TerrainRegion = _class_0
 end
-local _ = (function()
-  local Terrain
+return (function()
   do
     local _class_0
     local _parent_0 = BasePart
@@ -100,6 +98,3 @@ end)(), PVInstance({
   WriteVoxelChannels = function(region, resolution, channels) end,
   WriteVoxels = function(region, resolution, materials, occupancy) end
 })
-return {
-  Terrain
-}

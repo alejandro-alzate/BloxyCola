@@ -1,4 +1,17 @@
-local BasePart
+local Vector3
+Vector3 = require("Vector").Vector3
+local Enum
+Enum = require("Enum").Enum
+local BrickColor
+BrickColor = require("Color").BrickColor
+local CFrame
+CFrame = require("CFrame").CFrame
+local PhysicalProperties
+PhysicalProperties = require("PhysicalProperties").PhysicalProperties
+local Faces
+Faces = require("Faces").Faces
+local Color3
+Color3 = require("Color").Color3
 do
   local _class_0
   local _base_0 = {
@@ -70,7 +83,5 @@ do
   })
   _base_0.__class = _class_0
   BasePart = _class_0
+  return _class_0
 end
-return {
-  BasePart
-}

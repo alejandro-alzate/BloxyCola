@@ -1,1 +1,3 @@
-moonc -t ./Engine ./Source/*.moon
+cd Source
+moonc -t ../Engine ./**/*.moon
+cd ..

@@ -2,8 +2,7 @@ local Model
 Model = require("Model").Model
 local PVInstance
 PVInstance = require("PVInstance").PVInstance
-local _ = (function()
-  local Actor
+return (function()
   do
     local _class_0
     local _parent_0 = Model
@@ -48,6 +47,3 @@ end)(), PVInstance({
   BindToMessageParallel = function(topic, func) end,
   SendMessage = function(topic, message) end
 })
-return {
-  Actor
-}

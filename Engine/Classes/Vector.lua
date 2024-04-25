@@ -1,3 +1,23 @@
+local Vector2
+do
+  local _class_0
+  local _base_0 = { }
+  _base_0.__index = _base_0
+  _class_0 = setmetatable({
+    __init = function() end,
+    __base = _base_0,
+    __name = "Vector2"
+  }, {
+    __index = _base_0,
+    __call = function(cls, ...)
+      local _self_0 = setmetatable({}, _base_0)
+      cls.__init(_self_0, ...)
+      return _self_0
+    end
+  })
+  _base_0.__class = _class_0
+  Vector2 = _class_0
+end
 local Vector3
 do
   local _class_0
@@ -74,12 +94,8 @@ do
           error("Projection can only be calculated with another Vector3")
         end
       end
-      local otherUnit = {
-        otherVector = unit()
-      }
-      local dotProduct = {
-        self = Dot(otherUnit)
-      }
+      local otherUnit = otherVector:unit()
+      local dotProduct = self:Dot(otherUnit)
       return otherUnit * dotProduct
     end,
     __newindex = function(self, tbl, key, val)
@@ -115,9 +131,7 @@ do
       elseif type(b) == "number" then
         return Vector3(a.X * b, a.Y * b, a.Z * b)
       else
-        return {
-          self = Dot(a)
-        }
+        return self:Dot(a)
       end
     end,
     __div = function(self, a, b)
@@ -205,7 +219,4 @@ do
   _base_0.__class = _class_0
   Vector3 = _class_0
 end
-return {
-  Vector3,
-  Vector2
-}
+return Vector3, Vector2

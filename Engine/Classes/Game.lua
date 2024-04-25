@@ -7,7 +7,6 @@ local BrickColor
 BrickColor = require("Color").BrickColor
 local Enum
 Enum = require("Enum").Enum
-local Game
 do
   local _class_0
   local _base_0 = {
@@ -41,7 +40,5 @@ do
   })
   _base_0.__class = _class_0
   Game = _class_0
+  return _class_0
 end
-return {
-  Game
-}

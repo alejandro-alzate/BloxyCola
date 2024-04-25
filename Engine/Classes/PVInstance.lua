@@ -1,5 +1,7 @@
 local Instance
 Instance = require("Instance").Instance
+local CFrame
+CFrame = require("CFrame").CFrame
 local PVINstance
 do
   local _class_0

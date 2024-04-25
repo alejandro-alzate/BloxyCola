@@ -4,8 +4,9 @@ local BasePart
 BasePart = require("BasePart").BasePart
 local Instance
 Instance = require("Instance").Instance
-local _ = (function()
-  local Part
+local Enum
+Enum = require("Enum").Enum
+return (function()
   do
     local _class_0
     local _parent_0 = BasePart
@@ -52,6 +53,3 @@ end)(), PVInstance, Instance({
     self.Shape = properties.Shape or Enum.PartType.Block
   end
 })
-return {
-  Part
-}
