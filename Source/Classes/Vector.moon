@@ -26,13 +26,6 @@ class Vector2
 
 	Cross: (otherVector) =>
 		--TODO:
-		-- if type(otherVector) == "table"
-		-- 	if not otherVector.__class == "Vector2"
-		-- 		error "Cross product can only be calculated with another Vector2"
-		-- newX = @Y * otherVector.Z - @Z * otherVector.Y
-		-- newY = @Z * otherVector.X - @X * otherVector.Z
-		-- newZ = @X * otherVector.Y - @Y * otherVector.X
-		-- Vector2(newX, newY, newZ)
 
 	LinearLerp: (goalVector, alpha=0) =>
 		if not goalVector.__class == "Vector2"
